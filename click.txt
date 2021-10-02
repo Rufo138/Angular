@@ -1,0 +1,79 @@
+ng g c 
+angular generate component
+
+los componentes de angular se manejan de la siguiente manera
+html: se guardan todo html
+ts: se importa los component y se guarda el typescript
+css: se guarda los estilos 
+espect: se guardan los test 
+
+el click se usan (click)="funcion()"
+para llamar a las variables de los componentes se usan {{}}
+
+hay que agregar el componente a .module para que sean usados
+se pueden usar los componentes dentro de los componentes llamandolos en el html
+
+el contructor se ejecuta antes de renderizar el componente
+luego viene el onInit
+
+directiva ngFor
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{heroe}}
+    </li>
+
+*ngFor crea una variable let llamada heroe , que recorre el array heroes y lo llamamos luego con {{heroe}}
+con let i mostramos el index 
+sobre el div *ngIf=""
+si es false oculta lo que buscamos
+si es true lo muestra
+*ngIf="heroeBorrado.length > 0">
+si el array esta vacio es menor a 0 oculta lo que queremos
+
+*ngIf="heroeBorrado !== ''"
+*ngIf="heroeBorrado"
+
+
+<div *ngIf="heroeBorrado; else noBorrado">
+    <h3>HeroeBorrado:
+        <small>
+        {{heroeBorrado}}
+    </small>
+</h3>
+</div>
+<ng-template #noBorrado>
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+refencias locales
+cuando metamos un ngIf podemos usar un ng-template que venderia a ser como el else
+para eso tenemos que especificar despues del *ngIf="heroeBorrado, else noBorrado"
+
+# referencias locales van del lado del template
+
+al armar modulos primero
+import { NgModule } from '@angular/core'; se traer el modulo de angular
+
+luego se exporta 
+export class HeroesModule {
+
+}
+y se llama al decorador @NgModule
+se le agregan declaraciones que es un array[arreglo]
+@NgModule({
+    declarations: [
+        
+    ]
+})
+y adentro van los componentes
+todo lo que escribimos en declaraciones hasta que definamosç
+
+importar CommonModule
+    imports:[
+        CommonModule
+    ]
+
+y nos importa commonmodule
+se hace todo en modulos aparte y despues se agregan a imports 
+agregar el commonModule siempre
+si se usa if o for 
+si se usa directivas de angular se importa common module
