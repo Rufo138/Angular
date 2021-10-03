@@ -77,3 +77,12 @@ se hace todo en modulos aparte y despues se agregan a imports
 agregar el commonModule siempre
 si se usa if o for 
 si se usa directivas de angular se importa common module
+$ git tag -a v0.1.0 -m "pruebas modulos"
+$ git push --tags
+asi subimos tags
+
+ng g c dbz/mainPage --skip-tests
+para crear componentes
+crea el componenta y actualiza el module
+
+cuanto tira error el componente del modulo exportar el componente si o si
