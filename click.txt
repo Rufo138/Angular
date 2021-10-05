@@ -86,3 +86,73 @@ para crear componentes
 crea el componenta y actualiza el module
 
 cuanto tira error el componente del modulo exportar el componente si o si
+agregar en el module formModules 
+
+[ngModel]="nuevo.nombre"
+
+[ngModel]="nuevo.nombre"
+al usar ng model tenemos que establecer si o si el tag
+name='' 
+usar comillas simples o saldra error
+() escuchar evento
+[] emitir evento
+
+{{nuevo.nombre}} podemos mostrar el parametro en pantalla
+
+personaje.poder | number
+                esto es pipe 
+sirve para modificar visualmente la info
+
+<app-personajes [personajes]="personajes"></app-personajes>
+este es de personajes component |  este es personajes de main component
+
+
+export class PersonajesComponent {
+  @Input('data') personajes:any[] = [];
+}
+dentro del input podemos poner el nombre que queremos que tenga 
+en este caso sera data
+<app-personajes [data]="personajes"></app-personajes>
+desde ahi lo llamamos
+ctrl + . 
+nos abre soluciones y importaciones para solucionar errores
+atento al usar eventEmiter que se importe desde angular core o vas a tener error
+
+
+ @Output() nuevoPj:EventEmitter<Personaje> = new EventEmitter();
+ lo que dice esta linea es que nuevopj emite un nuevo personaje
+
+
+   @Output() nuevoPj:EventEmitter<Personaje> = new EventEmitter();
+  agregar(){
+    if(this.nuevo.nombre.trim().length === 0){
+      return;
+    }
+    this.nuevoPj.emit( this.nuevo )
+
+    solo se puede emitir tipo personaje , this.nuevo es un personaje
+
+    F5 podemos abrir el debuger y revisar el codigo
+services
+
+lo que cambia en los servicios es el decorador es del tipo @Injectable
+tiene que importarlo de angular core
+
+hay que agregar en el module de dbz los providers
+que son servicios 
+se coloca informacion y fuentes en servicios para poder trabajarlos dentro de cualquiera de los componentes o servicios
+para obtener o manipular data hay que hacerlo desde los servicios
+
+  get personajes():Personaje[]{
+  return this.DbzService.personajes;
+  }
+  con un get podemos obtener la informacion de los servicios
+  al crear algo con la propiedad private hay que agregar un _ al inicio
+  private _personajes:Personaje
+
+el orden de los services es el siguiente
+Propiedades
+geter y seter
+contructor
+metodos
+

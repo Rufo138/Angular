@@ -2,23 +2,10 @@
 <hr>
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
-        <hr>
-            <ul>
-            <li>Goku - 15,000</li>
-            <li>Vegeta - 14,000</li>
-            <li>Gohan - 1200</li>
-            <li>Picolo - 1000</li>
-            <li>Krillin - 700</li>
-        </ul>
+        <app-personajes></app-personajes>
     </div>
     <div class="col">
-        <h3>Agregar Personajes</h3>
-        <hr>
-        <form (submit)="agregar( $event )">
-            <input type="text" placeholder="Nombre">
-            <input type="number" placeholder="Poder">
-            <button type="submit">Agregar</button>
-        </form>
+        <app-agregar [nuevo]="nuevo"
+        ></app-agregar>
     </div>
 </div>
